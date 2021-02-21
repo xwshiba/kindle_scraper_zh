@@ -36,11 +36,11 @@ The important reference for this tool is:
 
 The revisions include:
 1. Encoded UTF-8 and alter parsing details to comply specifically with Kindle Chinese language system.
-2. Added function to parse titles to comply .txt naming conventions.
-3. Added function to export .csv files for Notion users.
+2. Added function to parse titles to comply with .txt naming conventions.
+3. Added function to export .csv files for __Notion__ users.
 4. Removed the JSON related functions.
 
 ---
 
-_Special thanks to Mimi for all the support_  
+__Special thanks to Mimi for all the support__  
 _如果您对北美hiking感兴趣，请访问我们的网站[猫和柴的野游](https://www.meowshiba.com)_
