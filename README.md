@@ -42,5 +42,5 @@ The revisions include:
 
 ---
 
-_Special thanks to Cat for all the support_  
-_如果您对北美hiking感兴趣，请访问我们的网站[猫和柴的野游](https://www.meowshibatravel.com)_
+_Special thanks to Mimi for all the support_  
+_如果您对北美hiking感兴趣，请访问我们的网站[猫和柴的野游](https://www.meowshiba.com)_
