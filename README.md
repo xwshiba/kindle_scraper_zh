@@ -17,12 +17,12 @@ __Special Note: copy and paste the exported files elsewhere to avoid being overw
 2. Paste your `My Clippings.txt` file in it.
 
 #### In txt format:
-1. Run `python .\kindle_scraper.py importAsTxt`; for Mac users, run `python3 kindle_scraper.py importAsTxt`.
-2. Kindler makes a folder `/highlights` in your working directory. Open it.
+1. For PC users, run `python .\kindle_scraper.py importAsTxt`; for Mac users, run `python3 kindle_scraper.py importAsTxt`.
+2. This script makes a folder `/highlights` in your working directory. Open it.
 3. Your highlights, companied by the locations information, are in text files named after the book's title saved in the same folder.
 #### In csv format:
 1. For PC users, run `python .\kindle_scraper.py importAsCsv`; for Mac users, run `python3 kindle_scraper.py importAsCsv`.
-2. Kindler makes a folder `/highlights` in your working directory. Open it.
+2. This script makes a folder `/highlights` in your working directory. Open it.
 3. Your highlights, companied by the locations information, are in csv files named after the book's title saved in the same folder.
 4. Make sure to read the instructions printed on terminal to open csv files in `UTF-8 format`.
 

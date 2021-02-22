@@ -154,7 +154,7 @@ def importAsCsv():
     print(
         f"I've saved {len(units)} highlights, notes and bookmarks from {len(getTitles())} titles in the same folder. Please read the instructions here for open the .csv files:\n")
 
-    print("1. Open an empty Microsoft Excel File;\n2. Click on the 'Data' menu bar option\n3. Click on the From Text icon.\n4. Navigate to the location of the file that you want to import.\n5. Click on the filename and then click on the Import button.\n 6.The Text Import Wizard - Step 1 or 3 window will now appear on the screen.\n7. Choose the file type that best describes your data - 'Delimited'.\n8. Choose '65001: Unicode(UTF-8)' from the drop-down list that appears next to File origin.\n9. Choose the 'comma' as delimeter.\n10. Choose to open as a new sheet. \n11. Click on the Finish button to finish importing your data into Microsoft Excel.\n12. You are welcome!"
+    print("1. Open an empty Microsoft Excel File;\n2. Click on the 'Data' menu bar option\n3. Click on the From Text icon.\n4. Navigate to the location of the file that you want to import.\n5. Click on the filename and then click on the Import button.\n6.The Text Import Wizard - Step 1 or 3 window will now appear on the screen.\n7. Choose the file type that best describes your data - 'Delimited'.\n8. Choose '65001: Unicode(UTF-8)' from the drop-down list that appears next to File origin.\n9. Choose the 'comma' as delimeter.\n10. Choose to open as a new sheet. \n11. Click on the Finish button to finish importing your data into Microsoft Excel.\n12. You are welcome!"
           )
 
 
