@@ -32,7 +32,6 @@ def getUnits():
         """Returns integer for location. For locations of type '100-123', we take 100. 
         And page information is eliminated."""
         listed_details = details.split()
-        print(listed_details)
 
         if '您在第' in listed_details[1] and '#' in listed_details[4]:
             location = listed_details[4].split('-')[0].split('#')[1]
