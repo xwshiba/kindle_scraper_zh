@@ -1,6 +1,6 @@
 ## Kindle Scraper for Mandarin System
 Free your highlights and locations information from Kindle's `My Clippings.txt`.  
-This script is designed specifically for Kindle Chinese language system.  
+This script is designed __specifically for Kindle Chinese language system__.  
 Hope you find it useful!  
 
 __Special Note: copy and paste the exported files elsewhere to avoid being overwritten.__
