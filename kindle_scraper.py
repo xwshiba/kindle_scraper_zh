@@ -6,12 +6,13 @@ Summary:    Scrape your highlights from Kindle's My Clippings.txt
 
 from sys import argv
 from csv import writer, DictWriter
+import os
 
 my_clippings = 'My Clippings.txt'  # filename.
 
 
 def getLines():
-    "Returns list of all lines from file. Extra delimeter is added to beginning."
+    """Returns list of all lines from file. Extra delimeter is added to beginning."""
     file = open(my_clippings, 'r', encoding='utf-8')
     # can avoid extra delimeter by indexing properly
     return ['=========='] + [line.strip() for line in file]
@@ -28,9 +29,26 @@ def getUnits():
         # if no extra delimeter in getLines(), last condition is just len(lines). Which is easier to read?
 
     def parseDetails(details):
-        "Returns tuple (kind_of_unit, location). For locations of type '100-123', we take 100."
+        """Returns integer for location. For locations of type '100-123', we take 100. 
+        And page information is eliminated."""
         listed_details = details.split()
-        return(f"Location {listed_details[2].split('-')[0].split('#')[1]}")
+        print(listed_details)
+
+        if '您在第' in listed_details[1] and '#' in listed_details[4]:
+            location = listed_details[4].split('-')[0].split('#')[1]
+
+        elif '您在第' not in listed_details[1]:
+            # for extrem cases: only one number in location
+            if '-' in listed_details[2]:
+                location = listed_details[2].split('#')[1].split('-')[0]
+            elif '的' in listed_details[2]:
+                location = listed_details[2].split('#')[1][0:-3]
+            else:
+                location = listed_details[2].split('#')[1]
+        else:
+            location = 0
+
+        return(int(location))
 
     lines, units = getLines(), []
 
@@ -39,27 +57,25 @@ def getUnits():
         # (highlight/note/bookmark, location)
         details = parseDetails(lines[delimeterIndex+2])
         message = lines[delimeterIndex+4]
-        units.append((title, details, message))
+        # For extrem cases when message doesn't exist
+        if message != "":
+            units.append((title, details, message))
     return units
 
 
 def getTitles():
-    "Returns alphabetically sorted list of titles. Removes duplicates."
+    """Returns alphabetically sorted list of titles. Removes duplicates."""
     # to-do: allow sorting using keys- last read or alphabetically.
     from string import ascii_letters
     titles = []
     for unit in units:
         title = unit[0]
-        # handling titles that start with u'\ufeff'.
-        if title[0] not in ascii_letters:
-            titles.append(title[1:])
-        else:
-            titles.append(title)
+        titles.append(title)
     return sorted(list(set(titles)))
 
 
 def titleScraper(title):
-    """remove special characters " /\: *?"<>|" based on .txt filename restrictions"""
+    """remove special symbols " /\: *?"<>|" based on .txt filename restrictions"""
     regex = r'/\\\\: \\*\\?"<>\\|'
     cleanTitle = title.translate({ord(c): "_" for c in regex})
     return cleanTitle
@@ -79,25 +95,35 @@ def help():
 
 
 def showTitles():
-    "Prints all titles."
+    """Prints all titles."""
     [print(i, title) for i, title in enumerate(getTitles(), start=1)]
 
 
 def informationFrom(title):
-    "Returns list of all highlights in given title."
+    """Returns list of all highlights in given title."""
+    # filter all the titles out
     matching_units = filter((lambda unit: title in unit[0]), units)
-    temp = sorted(matching_units, key=(lambda x: x[1][1]))
+    temp = sorted(matching_units, key=(lambda x: x[1]))
     locations = [unit[1] for unit in temp]
     highlights = [unit[2] for unit in temp]
     return locations, highlights
 
 
+def makeFile():
+    cwd = os.path.abspath(os.curdir)
+    directory = f'{cwd}/highlights'
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
 def importAsTxt():
-    "Imports your clippings as txt file, saves them in ../{title}.txt"
+    """Imports your clippings as txt file, saves them in ../{title}.txt"""
+
+    makeFile()
 
     for title in getTitles():
         cleanTitle = titleScraper(title)
-        with open(f"{cleanTitle}.txt", "w+", encoding="utf-8") as outfile:
+        with open(f"highlights/{cleanTitle}.txt", "w+", encoding="utf-8") as outfile:
             locations = informationFrom(title)[0]
             highlights = informationFrom(title)[1]
             for index in range(0, len(locations)):
@@ -109,10 +135,13 @@ def importAsTxt():
 
 
 def importAsCsv():
-    "Imports your clippings as txt file, saves them in ../{title}.csv"
+    """Imports your clippings as txt file, saves them in ../{title}.csv"""
+
+    makeFile()
+
     for title in getTitles():
         cleanTitle = titleScraper(title)
-        with open(f"{cleanTitle}.csv", "w+", encoding="utf-8") as outfile:
+        with open(f"highlights/{cleanTitle}.csv", "w+", encoding="utf-8") as outfile:
             headers = ["Location", "Highlights"]
             csv_writer = DictWriter(outfile, fieldnames=headers)
             csv_writer.writeheader()
@@ -125,7 +154,8 @@ def importAsCsv():
                 })
     print(
         f"I've saved {len(units)} highlights, notes and bookmarks from {len(getTitles())} titles in the same folder. Please read the instructions here for open the .csv files:\n")
-    print("Open Excel\nClick on the Data menu bar option\nClick on the From Text icon.\nNavigate to the location of the file that you want to import.\nClick on the filename and then click on the Import button.  The Text Import Wizard - Step 1 or 3 window will now appear on the screen.\nChoose the file type that best describes your data - Delimited or Fixed Width.\nChoose 65001: Unicode(UTF-8) from the drop-down list that appears next to File origin.\nChoose the appropriate data format for each column of data that you want to import. You also have the option to not import one or more columns of data if you want.\nClick on the Finish button to finish importing your data into Microsoft Excel.\nYou are welcome!"
+
+    print("1. Open an empty Microsoft Excel File;\n2. Click on the 'Data' menu bar option\n3. Click on the From Text icon.\n4. Navigate to the location of the file that you want to import.\n5. Click on the filename and then click on the Import button.\n 6.The Text Import Wizard - Step 1 or 3 window will now appear on the screen.\n7. Choose the file type that best describes your data - 'Delimited'.\n8. Choose '65001: Unicode(UTF-8)' from the drop-down list that appears next to File origin.\n9. Choose the 'comma' as delimeter.\n10. Choose to open as a new sheet. \n11. Click on the Finish button to finish importing your data into Microsoft Excel.\n12. You are welcome!"
           )
 
 

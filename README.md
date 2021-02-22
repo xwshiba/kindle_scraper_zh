@@ -3,12 +3,12 @@ Free your highlights and locations information from Kindle's `My Clippings.txt`.
 This script is designed specifically for Kindle Chinese language system.  
 Hope you find it useful!  
 
-_Special Note: copy and paste the exported files elsewhere to avoid being overwritten next time._
+__Special Note: copy and paste the exported files elsewhere to avoid being overwritten.__
 
 ### Get Help:
 
 1. Clone this repository.
-2. Run `python .\kindle_scraper.py` help.
+2. Run `python .\kindle_scraper.py` help (Mac Users please change your command accordingly).
 3. It will tell you what it can do for you.
 
 ### Get All Your Highlights:
@@ -17,17 +17,19 @@ _Special Note: copy and paste the exported files elsewhere to avoid being overwr
 2. Paste your `My Clippings.txt` file in it.
 
 #### In txt format:
-1. Run `python .\kindle_scraper.py importAsTxt`.
-2. Your highlights, companied by the locations information, are in text files named after the book's title saved in the same folder.
+1. Run `python .\kindle_scraper.py importAsTxt`; for Mac users, run `python3 kindle_scraper.py importAsTxt`.
+2. Kindler makes a folder `/highlights` in your working directory. Open it.
+3. Your highlights, companied by the locations information, are in text files named after the book's title saved in the same folder.
 #### In csv format:
-1. Run `python .\kindle_scraper.py importAsCsv`.
-2. Your highlights, companied by the locations information, are in csv files named after the book's title saved in the same folder.
-3. Make sure to read the instructions printed on terminal to open csv files in `UTF-8 format`.
+1. For PC users, run `python .\kindle_scraper.py importAsCsv`; for Mac users, run `python3 kindle_scraper.py importAsCsv`.
+2. Kindler makes a folder `/highlights` in your working directory. Open it.
+3. Your highlights, companied by the locations information, are in csv files named after the book's title saved in the same folder.
+4. Make sure to read the instructions printed on terminal to open csv files in `UTF-8 format`.
 
 ### Get List Of Titles:
 
 1. Clone this repository. Paste your `My Clippings.txt` file in it.
-2. Run `python .\kindle_scraper.py showTitles`.
+2. For PC users, run `python .\kindle_scraper.py showTitles`; for Mac users, run `python3 kindle_scraper.py showTitles`.
 3. Your titles are printed on terminal.
 
 #### References
