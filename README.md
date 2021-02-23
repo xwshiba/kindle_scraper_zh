@@ -1,15 +1,22 @@
 ## Kindle Scraper for Mandarin System
-Using Python to organize Kindle's `My Clippings.txt`. It will generate individual .csv or .txt files for each book, which contains sorted location information and highlights for Notion, Evernote or other personal notebooks.
-__Chinese User Guide and script reflections please visit my personal blog [Shiba Woof's Playground](https://www.shiba.meowshiba.com)__  
+Using Python to organize Kindle's `My Clippings.txt`. It will generate individual .csv or .txt files for each book, which contains highlights and notes with sorted location information. You can use the exported .csv and .txt files in any personal notebook platforms, such as Notion and Evernote.  
+__For User Guide written in Chinese and reflections of building this script, please visit my personal blog [Shiba Woof's Playground](https://www.shiba.meowshiba.com)__  
 This script is designed __specifically for Kindle Chinese language system__.  
-__Special Note: copy and paste the exported files elsewhere to avoid being overwritten.__
+__Special Note: remember to copy and paste the exported files elsewhere to avoid overrides.__  
+
+![Example: Organized txt Notes in Notion](https://shiba.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_16_notion-text-preview-768x583.png " ")
+
+![Example: Organized csv Notes in Notion](https://shiba.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_14_notion-csv-preview-1024x720.png " ")
+
 
 ---
 
 ### Get All Your Highlights:
 
 1. Clone this repository. 
-2. Paste your `My Clippings.txt` file in it.
+2. Paste your `My Clippings.txt` file in it.  
+![Clone Repo](https://shiba.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_01_clone.png " ")  
+![Copy My_Clippings.txt](https://shiba.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_02_move-clippings-to-folder.png " ")
 
 #### In txt format:
 1. For PC users, run `python .\kindle_scraper.py importAsTxt`
