@@ -1,5 +1,5 @@
 """
-Project:    Kindle Scraper for Mandarin System
+Project:    kindle_scraper for Mandarin System
 Started:    19/02/2020
 Summary:    Scrape your highlights from Kindle's My Clippings.txt
 """
@@ -86,7 +86,7 @@ def help():
                 'importAsCsv': 'Import your highlights as .txt in the same folder.'}
     # 'importAsJSON': 'Import your highlights as JSON.'
 
-    print("Welcome to kindler.py, use me to scrape your highlights from Kindle's My Clippings.txt \n")
+    print("Welcome to kindle_scraper.py, use me to scrape your highlights from Kindle's My Clippings.txt \n")
     print("Here are commands and their descriptions: \n")
 
     for command, description in features.items():
@@ -177,7 +177,7 @@ if __name__ == "__main__":
             try:
                 outputs = modes[option]()
             except KeyError:
-                print('Invalid option! For help, run: python kindler.py help')
+                print('Invalid option! For help, run: python kindle_scraper.py help')
         except FileNotFoundError:
             print(
-                "Kindler: I can't find your My Clippings.txt file here. Did you paste it? \n")
+                "Kindle_scraper: I can't find your My Clippings.txt file here. Did you paste it? \n")
