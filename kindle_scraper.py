@@ -163,7 +163,10 @@ def importAsCsv():
 
 
 if __name__ == "__main__":
-    option = argv[1]
+    try:
+        option = argv[1]
+    except IndexError:
+        option = 'help'
 
     modes = {'showTitles': showTitles,
              'importAsTxt': importAsTxt, 'importAsCsv': importAsCsv}
