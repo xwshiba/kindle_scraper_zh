@@ -62,6 +62,7 @@ She also contributed a lot to the documentations and this instruction.
 
 To-do List:
 1. Optimize the parseDetails() to include separation among `标注、笔记、书签`.
+2. Include support for English system.
 
 __Special thanks to Mimi for all the support!__  
 _如果您对北美hiking感兴趣，请访问我们的网站[猫和柴的野游](https://www.meowshiba.com)_
