@@ -45,14 +45,18 @@ __Special Note: remember to copy and paste the exported files elsewhere to avoid
 #### References
 The important reference for this tool is:
 > [kindler by sanjamaniam](https://github.com/sanjaymaniam/kindler) This kindler script is used as the foundation for this scraper.
-
-The revisions include:
+> The revisions include:
 1. Encoded UTF-8 and alter parsing details to comply specifically with Kindle Chinese language system.
 2. Added Kindle Location information correspondent with the highlights.
 3. Added function to parse titles to comply with .txt naming conventions.
 4. Added function to export .csv files for __Notion__ users.
 5. Removed the JSON related functions.
 6. Fixed the command line error in the terminal - _Latest Update on Aug, 2021_
+
+#### Collaboration
+The program is developed by myself. 
+However, Meow involved heavily during the testing phase. 
+She also contributed a lot to the documentations and this instruction.
 
 ---
 
