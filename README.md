@@ -3,7 +3,7 @@
 _Latest Update on Aug, 2021: fixed the command line error in the terminal_
 
 Using Python to organize Kindle's `My Clippings.txt`. It will generate individual .csv or .txt files for each book, which contains highlights and notes with sorted location information. You can use the exported .csv and .txt files in any personal notebook platforms, such as Notion and Evernote.  
-__For User Guide written in Chinese and reflections of building this script, please visit my personal blog [Shiba Woof's Playground](https://www.shiba.meowshiba.com)__  
+__For User Guide written in Mandarin and reflections of building this script, please visit my personal blog [Shiba Woof's Playground](https://www.shibe.meowshiba.com)__  
 This script is designed __specifically for Kindle Chinese language system__.  
 __Special Note: remember to copy and paste the exported files elsewhere to avoid overrides.__  
 
