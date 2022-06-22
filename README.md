@@ -7,17 +7,20 @@ __For User Guide written in Mandarin and reflections of building this script, pl
 This script is designed __specifically for Kindle Chinese language system__.  
 __Special Note: remember to copy and paste the exported files elsewhere to avoid overrides.__  
 
-![Example: Organized csv Notes in Notion](https://shibe.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_14_notion-csv-preview-1024x720.png "Example: Organized csv Notes in Notion")  
+![Example: Organized csv Notes in Notion](https://shibe.meowshiba.com/wp-content/uploads/2022/05/kindle_mac_14_notion-csv-preview-1.png "Example: Organized csv Notes in Notion")  
 
 
 ---
 
 ### Get All Your Highlights:
 
-1. Clone this repository. 
+1. Clone this repository.
+
+![Clone Repo](https://shibe.meowshiba.com/wp-content/uploads/2022/05/kindle_mac_01_clone.png "Clone Repo")  
+
 2. Paste your `My Clippings.txt` file in it.  
-![Clone Repo](https://shibe.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_01_clone.png "Clone Repo")  
-![Copy My_Clippings.txt](https://shibe.meowshiba.com/wp-content/uploads/2021/02/kindle_mac_02_move-clippings-to-folder.png "Copy My_Clippings.txt")
+
+![Copy My_Clippings.txt](https://shibe.meowshiba.com/wp-content/uploads/2022/05/kindle_mac_02_move-clippings-to-folder.png "Copy My_Clippings.txt")
 
 #### In txt format:
 1. For PC users, run `python .\kindle_scraper.py importAsTxt`
