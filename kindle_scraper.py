@@ -36,7 +36,7 @@ def getUnits():
         if '您在第' in listed_details[1] and '#' in listed_details[4]:
             location = listed_details[4].split('-')[0].split('#')[1]
 
-        elif '您在第' not in listed_details[1]:
+        elif '您在第' not in listed_details[1] and len(listed_details) > 2:
             # for extrem cases: only one number in location
             if '-' in listed_details[2]:
                 location = listed_details[2].split('#')[1].split('-')[0]
